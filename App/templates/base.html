@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SJ Sports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <img src="{{ url_for('static', filename='images/gymlogo.png') }}"  alt="SJ Sports Gym Logo">
+      <h1><a href="{{ url_for('index') }}">SJ Sports</a></h1>
+      <h3>{{ session['branch'] }} Branch</h3>
+      {% if 'username' in session %}
+      <p>Hello {{ session['username'] }}!</p>
+      {% else %}
+        <p>Hello Guest!</p>
+      {% endif %}
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('schedules') }}">Schedules</a></li>
+        <li><a href="{{ url_for('memberships') }}">Memberships</a></li>
+        {% if not session.logged_in %}
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+        {% if session.logged_in %}
+        <li><a href="{{ url_for('your_classes') }}">Your Classes</a></li>
+        <li><a href="{{ url_for('log_workout') }}">Log Workout</a></li>
+        <li><a href="{{ url_for('your_activity') }}">Your Activity</a></li>
+        {% endif %}
+        {% if session.admin %}
+        <li><a href="{{ url_for('registration') }}">Registration</a></li>
+        <li><a href="{{ url_for('checkins') }}">Checkin / Checkout</a></li>
+        <li><a href="{{ url_for('trialsignup') }}">Trial Signup</a></li>
+        <li><a href="{{ url_for('analytics') }}">Analytics</a></li>
+        {% endif %}
+        {% if session.logged_in %}
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+  </body>
+</html>

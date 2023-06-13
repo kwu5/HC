@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<h3>Check-In/Out</h3>
+<form method="POST">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" name="submit_type" value="Check-In">
+    <input type="submit" name="submit_type" value="Check-Out">
+</form>
+
+{% endblock %}
+      

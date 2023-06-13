@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<h2>Instructors Summary</h2>
+<table class="mt-3">
+    <thead>
+      <tr>
+        {% for key in data[0].keys() %}
+          <th>{{ key }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+        <tr>
+          {% for value in item.values() %}
+            <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<h2>Members Summary</h2>
+
+
+{% endblock %}
+      

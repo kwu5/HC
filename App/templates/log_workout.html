@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+<div class="container">
+  <h1>Log Your Workouts</h1>
+  <br></br>
+  <form method="POST">
+    <div class="form-group">
+      <label for="treadmill-hours">Treadmill:</label>
+      <input type="number" id="treadmill-hours" name="treadmill-hours" min="0" max="180">
+    </div>
+
+    <div class="form-group">
+      <label for="cycling-hours">Cycling:</label>
+      <input type="number" id="cycling-hours" name="cycling-hours" min="0" max="180">
+    </div>
+
+    <div class="form-group">
+      <label for="stair-machine-hours">Stair Machines:</label>
+      <input type="number" id="stair-machine-hours" name="stair-machine-hours" min="0" max="180">
+    </div>
+
+    <div class="form-group">
+      <label for="weight-training-hours">Weight Training:</label>
+      <input type="number" id="weight-training-hours" name="weight-training-hours" min="0" max="180">
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+{% endblock %}

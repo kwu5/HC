@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<h1>Your Activity</h1>
+
+<div>
+    <form id="week-form" action="{{ url_for('your_activity') }}" method="POST">
+      <input type="hidden" name="week" value="true">
+      <button type="submit" class="btn btn-primary" id="activity_button">Past Week</button>
+    </form>
+    <form id="month-form" action="{{ url_for('your_activity') }}" method="POST">
+      <input type="hidden" name="month" value="true">
+      <button type="submit" class="btn btn-primary" id="activity_button">Past Month</button>
+    </form>
+    <form id="three-months-form" action="{{ url_for('your_activity') }}" method="POST">
+      <input type="hidden" name="three-months" value="true">
+      <button type="submit" class="btn btn-primary", id="activity_button">Past 90 Days</button>
+    </form>
+</div>
+  
+
+<table class="class-table">
+  <thead>
+    <tr>
+      {% for key in data[0].keys() %}
+        <th>{{ key }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in data %}
+      <tr>
+        {% for value in item.values() %}
+          <td>{{ value }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  
+<script>
+    const weekForm = document.getElementById('week-form');
+    const monthForm = document.getElementById('month-form');
+    const threeMonthsForm = document.getElementById('three-months-form');
+  
+    weekForm.addEventListener('submit', (event) => {
+      event.preventDefault();  
+      weekForm.submit(); 
+    });
+  
+    monthForm.addEventListener('submit', (event) => {
+      event.preventDefault(); 
+      monthForm.submit();  
+    });
+
+    threeMonthsForm.addEventListener('submit', (event) => {
+        event.preventDefault(); 
+        threeMonthsForm.submit(); 
+      });
+  </script>
+
+{% endblock %}
+      

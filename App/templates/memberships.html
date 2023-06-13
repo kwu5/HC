@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<h2>Memberships</h2>
+<table id="memberships-table">
+    <thead>
+        <tr>
+            <th>Membership Type</th>
+            <th>Cost</th>
+            <th>Locations</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    const data = {{ data|safe }};
+    const table = document.getElementById('memberships-table').getElementsByTagName('tbody')[0];
+
+    for (const [type, details] of Object.entries(data)) {
+        const row = table.insertRow();
+        row.insertCell(0).textContent = type;
+        row.insertCell(1).textContent = details.Cost;
+        row.insertCell(2).textContent = Array.isArray(details.Locations) ? details.Locations.join(', ') : details.Locations;
+    }
+</script>
+  
+
+{% endblock %}
+      

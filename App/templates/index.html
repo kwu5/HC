@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+
+{% if message %}
+    <div class="alert alert-success big-message">{{ message }}</div>
+{% endif %}
+
+<h2>Welcome to SJ Sports Gym</h2>
+<p>We offer state-of-the-art gym equipment, professional trainers, and a variety of group fitness classes to help you achieve your fitness goals.</p>
+
+<div>
+	{% for branch in branches %}
+		<a href="{{ url_for('branch', name=branch) }}" class="branch-link">{{ branch }}</a>
+		{% if not loop.last %}
+			<span class="branch-separator">|</span>
+		{% endif %}
+	{% endfor %}
+</div>
+
+{% endblock %}
+      

@@ -1,0 +1,180 @@
+header {
+    background-color: orange;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  header img {
+    max-width: 200px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+  nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+  .cta-button {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 0px;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .row > div {
+    display: auto;
+    align-items: auto;
+  }
+  .input-group {
+    display: auto;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  .branch-link {
+    font-size: 1.2em;
+  }
+  .branch-separator {
+    font-size: 1.2em;
+    margin: 0 10px;
+  }
+.big-message {
+  font-size: 40px;
+  font-weight: bold;
+}
+.alert {
+  margin-bottom: 10px;
+}
+.class-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.class-table th, .class-table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+h1 {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  label {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  input[type="number"] {
+    width: 100px;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+
+  input[type="submit"] {
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+#activity_button{
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+}
+#container{
+    text-align: center;
+}
+
+#schedules-prevnext{
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+}

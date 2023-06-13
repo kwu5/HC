@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<h1>Future Classes</h1>
+    <table class="class-table">
+      <thead>
+        <tr>
+          {% for key in future[0].keys() %}
+            <th>{{ key }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in future %}
+          <tr>
+            {% for value in item.values() %}
+              <td>{{ value }}</td>
+            {% endfor %}
+            <form method="POST">
+              <input type="hidden" name="cancel" value="{{ loop.index0 + (loop.depth0 * future[0]|length) }}">
+              <td><button class="btn btn-primary">Cancel</button></td>
+            </form>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h1>Past Classes</h1>
+    <table class="class-table">
+      <thead>
+        <tr>
+          {% for key in past[0].keys() %}
+            <th>{{ key }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in past %}
+          <tr>
+            {% for value in item.values() %}
+              <td>{{ value }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}
+
+<script>
+  const registerButtons = document.querySelectorAll('.btn-register');
+
+  registerButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault(); // prevent the default form submission behavior
+      
+      const itemID = event.target.closest('tr').dataset.itemId; // get the ID of the item being registered
+      const registerData = { itemID }; // create an object with the ID to send in the POST request
+      
+      fetch('/your_classes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(registerData)
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Cancel successful!');
+        } else {
+          alert('Cancel failed.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Cancel failed.');
+      });
+    });
+  });
+</script>
