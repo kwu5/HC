@@ -55,7 +55,7 @@ Google App Engine was used for cloud deployment, allowing for easy scaling and m
 ## Project Journal
 * [Project Journal - Noam Smilovich](Project%20Journals/Project%20Journal%20-%20Noam%20Smilovich.md)
 * [Project Journal - David Wang](Project%20Journals/Project%20Journal%20-%20David%20Wang.md)
-* [Project Journal - Kaijian Wu](Project%20Journals/Project%20Journal%20-%20Kaijian%20We.md)
+* [Project Journal - Kaijian Wu](Project%20Journals/Project%20Journal%20-%20Kaijian%20Wu.md)
 ## Burndown Chart
 
 <p align="center"><img src="Images/burndown_chart.jpg" alt="Burndown_chart" width="500" height="300"></p>
